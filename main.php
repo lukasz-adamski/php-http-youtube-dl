@@ -361,7 +361,7 @@ if (PHP_SAPI == 'cli') {
   {
     $loop = React\EventLoop\Factory::create();
 
-    $uri = isset($args[1]) ? $args[1] : '0.0.0.0:81';
+    $uri = isset($argv[1]) ? $argv[1] : '0.0.0.0:81';
     
     (new HttpServer('handle_http_request'))
       ->listen($socket = new Socket($uri, $loop));
